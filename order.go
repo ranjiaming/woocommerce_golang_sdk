@@ -1,6 +1,7 @@
 package woocommerce
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 )
@@ -86,7 +87,7 @@ type Order struct {
 	DateCreatedGmt     string          `json:"date_created_gmt,omitempty"`
 	DateModified       string          `json:"date_modified,omitempty"`
 	DateModifiedGmt    string          `json:"date_modified_gmt,omitempty"`
-	DiscountsTotal     string          `json:"discount_total,omitempty"`
+	DiscountsTotal     json.RawMessage `json:"discount_total,omitempty,string"`
 	DiscountsTax       string          `json:"discount_tax,omitempty"`
 	ShippingTotal      string          `json:"shipping_total,omitempty"`
 	ShippingTax        string          `json:"shipping_tax,omitempty"`
